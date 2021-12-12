@@ -1,18 +1,104 @@
-let propgraming_languages = [
-  'python',
-  'javascript',
-  'mongodb',
-  'json',
-  'java',
-  'html',
-  'css',
-  'c',
-  'csharp',
-  'golang',
-  'kotlin',
-  'php',
-  'sql',
-  'ruby',
+// const list = []
+
+// const cities = async () => {
+//   let response = await axios(
+//     'https://gist.githubusercontent.com/serong/9b25594a7b9d85d3c7f7/raw/9904724fdf669ad68c07ab79af84d3a881ff8859/iller.json'
+//   );
+//   let cityList = response.data;
+//   console.log(cityList);
+//   newCityList = Object.values(cityList);
+//   console.log(newCityList);
+//   newCityList.forEach((item) => {
+//     list.push(item)
+//   })
+// };
+// cities();
+// console.log(list);
+// const newList = Array.from(list)
+// console.log(newList);
+
+let cityList = [
+  'ADANA',
+  'ADIYAMAN',
+  'AFYONKARAHİSAR',
+  'AĞRI',
+  'AMASYA',
+  'ANKARA',
+  'ANTALYA',
+  'ARTVİN',
+  'AYDIN',
+  'BALIKESİR',
+  'BİLECİK',
+  'BİNGÖL',
+  'BİTLİS',
+  'BOLU',
+  'BURDUR',
+  'BURSA',
+  'ÇANAKKALE',
+  'ÇANKIRI',
+  'ÇORUM',
+  'DENİZLİ',
+  'DİYARBAKIR',
+  'EDİRNE',
+  'ELAZIĞ',
+  'ERZİNCAN',
+  'ERZURUM',
+  'ESKİŞEHİR',
+  'GAZİANTEP',
+  'GİRESUN',
+  'GÜMÜŞHANE',
+  'HAKKARİ',
+  'HATAY',
+  'ISPARTA',
+  'MERSİN',
+  'İSTANBUL',
+  'İZMİR',
+  'KARS',
+  'KASTAMONU',
+  'KAYSERİ',
+  'KIRKLARELİ',
+  'KIRŞEHİR',
+  'KOCAELİ',
+  'KONYA',
+  'KÜTAHYA',
+  'MALATYA',
+  'MANİSA',
+  'KAHRAMANMARAŞ',
+  'MARDİN',
+  'MUĞLA',
+  'MUŞ',
+  'NEVŞEHİR',
+  'NİĞDE',
+  'ORDU',
+  'RİZE',
+  'SAKARYA',
+  'SAMSUN',
+  'SİİRT',
+  'SİNOP',
+  'SİVAS',
+  'TEKİRDAĞ',
+  'TOKAT',
+  'TRABZON',
+  'TUNCELİ',
+  'ŞANLIURFA',
+  'UŞAK',
+  'VAN',
+  'YOZGAT',
+  'ZONGULDAK',
+  'AKSARAY',
+  'BAYBURT',
+  'KARAMAN',
+  'KIRIKKALE',
+  'BATMAN',
+  'ŞIRNAK',
+  'BARTIN',
+  'ARDAHAN',
+  'IĞDIR',
+  'YALOVA',
+  'KARABÜK',
+  'KİLİS',
+  'OSMANİYE',
+  'DÜZCE',
 ];
 
 let answer = '';
@@ -21,14 +107,15 @@ let mistakes = 0;
 let guessed = [];
 
 function randomWord() {
-  answer =
-    propgraming_languages[
-      Math.floor(Math.random() * propgraming_languages.length)
+  answer=
+    cityList[
+      Math.floor(Math.random() * cityList.length)
     ];
+    
 }
 
 function generateButtons() {
-  let buttonsHTML = 'abcdefghijklmnoprstuvwxyz'
+  let buttonsHTML = 'ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ'
     .split('')
     .map(
       (letter) =>
@@ -68,8 +155,7 @@ function handleGuess(chosenLetter) {
 }
 
 function updateHangmanPicture() {
-    document.getElementById("hangmanPic").src = `./image/${mistakes}.jpg`
-
+  document.getElementById('hangmanPic').src = `./image/${mistakes}.jpg`;
 }
 
 function checkIfGameWon() {
@@ -80,7 +166,9 @@ function checkIfGameWon() {
 
 function checkIfGameLost() {
   if (mistakes === maxWrong) {
-      document.getElementById('wordSpotlight').innerHTML = ` The answer was: ${answer}`;
+    document.getElementById(
+      'wordSpotlight'
+    ).innerHTML = ` The answer was: ${answer}`;
     document.getElementById('keyboard').innerHTML = 'You Lost!!';
   }
 }
