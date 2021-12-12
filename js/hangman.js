@@ -189,7 +189,7 @@ function updateMistakes() {
 function reset() {
   mistakes = 0;
   guessed = [];
-  document.getElementById('hangmanPic').src = './images/0.jpg';
+  document.getElementById('hangmanPic').src = './image/0.jpg';
 
   randomWord();
   guessedWord();
